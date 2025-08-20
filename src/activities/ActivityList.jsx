@@ -8,6 +8,7 @@ export default function ActivityList() {
     loading,
     error,
   } = useQuery("/activities", "activities");
+  console.log(activities);
 
   if (loading || !activities) return <p>Loading...</p>;
   if (error) return <p>Sorry! {error}</p>;
@@ -21,13 +22,11 @@ export default function ActivityList() {
   );
 }
 
-/** Shows a single activity. Logged-in users will also see a delete button. */
+/** Shows a single activity. */
 function ActivityListItem({ activity }) {
   return (
     <li>
-      {/* <p>{activity.name}</p> */}
       <Link to={`/activities/${activity.id}`}>{activity.name}</Link>{" "}
-      {/*Change the link later*/}
     </li>
   );
 }

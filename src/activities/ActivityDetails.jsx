@@ -24,7 +24,8 @@ export function ActivityDetails() {
         <button
           onClick={() => {
             deleteActivity();
-            navigate("/");
+            console.log(deleteError);
+            deleteError ? console.log("no error") : navigate("/");
           }}
         >
           {deleteLoading ? "Deleting" : deleteError ? deleteError : "Delete"}
