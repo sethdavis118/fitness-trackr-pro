@@ -20,7 +20,7 @@ export default function RoutineList() {
 function RoutineListItem({ routine }) {
   return (
     <li>
-      <p>{routine.name}</p>
+      <Link to={`/routines/${routine.id}`}>{routine.name}</Link>
     </li>
   );
 }

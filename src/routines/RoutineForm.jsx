@@ -9,8 +9,8 @@ export default function RoutineForm() {
 
   const addRoutine = (formData) => {
     const name = formData.get("name");
-    const description = formData.get("description");
-    add({ name, description });
+    const goal = formData.get("goal");
+    add({ name, goal });
   };
 
   return (
@@ -22,8 +22,8 @@ export default function RoutineForm() {
           <input type="text" name="name" />
         </label>
         <label>
-          Description
-          <input type="text" name="description" />
+          Goal
+          <input type="text" name="goal" />
         </label>
         <button>{loading ? "Adding..." : "Add activity"}</button>
         {error && <output>{error}</output>}
